@@ -670,4 +670,73 @@ EOF
         <lastmod>$(date +%Y-%m-%dT%H:%M:%S)</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-    </url
+    </url>
+EOF
+
+    for ((p=2; p<=total_pages; p++)); do
+        cat >> "$sitemap" << EOF
+    <url>
+        <loc>${SITE_URL}page-${p}.html</loc>
+        <lastmod>$(date +%Y-%m-%dT%H:%M:%S)</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+EOF
+    done
+
+    for f in data/*.zet; do
+        fname=$(basename "$f" .zet)
+        cat >> "$sitemap" << EOF
+    <url>
+        <loc>${SITE_URL}${fname}.html</loc>
+        <lastmod>$(date +%Y-%m-%dT%H:%M:%S)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+EOF
+    done
+
+    for f in pages/*.zet; do
+        fname=$(basename "$f" .zet)
+        cat >> "$sitemap" << EOF
+    <url>
+        <loc>${SITE_URL}pages/${fname}.html</loc>
+        <lastmod>$(date +%Y-%m-%dT%H:%M:%S)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+EOF
+    done
+
+    for f in public/tags/*.html; do
+        [ -f "$f" ] || continue
+        fname=$(basename "$f")
+        cat >> "$sitemap" << EOF
+    <url>
+        <loc>${SITE_URL}tags/${fname}</loc>
+        <lastmod>$(date +%Y-%m-%dT%H:%M:%S)</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+EOF
+    done
+
+    echo "</urlset>" >> "$sitemap"
+
+    # Robots.txt
+    cat > public/robots.txt << EOF
+User-agent: *
+Allow: /
+Disallow: /pages/
+Disallow: /tags/
+Sitemap: ${SITE_URL}sitemap.xml
+EOF
+
+    echo ""
+    echo "=========================================="
+    echo "  SEO FILES GENERATED!"
+    echo "=========================================="
+    echo "  public/sitemap.xml"
+    echo "  public/robots.txt"
+    echo "=========================================="
+}
