@@ -31,8 +31,4 @@ NAV:
     url: /pages/support.html
   - text: FAQ
     url: /pages/faq.html
-  - text: Download
-    url: https://creativitaz.gumroad.com/l/bax
-  - text: Github
-    url: https://github.com/mesinkasir/bax
 
