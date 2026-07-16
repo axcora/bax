@@ -473,7 +473,7 @@ set "post_url=!SITE_URL!%%~n1.html"
     echo ^<meta charset=^"UTF-8^"^>
     echo ^<meta name=^"viewport^" content=^"width=device-width, initial-scale=1.0^"^>
     echo ^<meta name=^"google-site-verification^" content=^"fJTzwsNcz2AtRxQpJZzU7db7TLPdR_lKSAXfyWDtHB4^"^>
-    echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"
+    echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>!post_title!^</title^>
     echo ^<meta name=^"description^" content=^"!post_desc!^"^>
     if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
@@ -579,7 +579,7 @@ if not defined page_url set "page_url=!SITE_URL!pages/%%~n1.html"
     echo ^<meta charset=^"UTF-8^"^>
     echo ^<meta name=^"viewport^" content=^"width=device-width, initial-scale=1.0^"^>
     echo ^<meta name=^"google-site-verification^" content=^"fJTzwsNcz2AtRxQpJZzU7db7TLPdR_lKSAXfyWDtHB4^"^>
-    echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"
+    echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>!page_title!^</title^>
     echo ^<meta name=^"description^" content=^"!page_desc!^"^>
     if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
@@ -675,7 +675,7 @@ goto :eof
     echo ^<meta charset=^"UTF-8^"^>
     echo ^<meta name=^"viewport^" content=^"width=device-width, initial-scale=1.0^"^>
     echo ^<meta name=^"google-site-verification^" content=^"fJTzwsNcz2AtRxQpJZzU7db7TLPdR_lKSAXfyWDtHB4^"^>
-    echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"
+    echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>#%~1 - !SITE_TITLE!^</title^>
     echo ^<meta name=^"description^" content=^"Posts tagged with %~1 - !SITE_TITLE!^"^>
     if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
