@@ -190,7 +190,7 @@ set /a end_post=%1 * POSTS_PER_PAGE
     echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>!SITE_TITLE! - Page %1^</title^>
     echo ^<meta name=^"description^" content=^"!SITE_DESCRIPTION!^"^>
-    if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
+    echo ^<link rel=^"icon^" href=^"!SITE_FAVICON
     echo ^<link href=^"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css^" rel=^"stylesheet^"^>
     echo ^<link href=^"style.css^" rel=^"stylesheet^"^>
     echo !META_OPEN!
@@ -476,7 +476,7 @@ set "post_url=!SITE_URL!%%~n1.html"
     echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>!post_title!^</title^>
     echo ^<meta name=^"description^" content=^"!post_desc!^"^>
-    if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
+    echo ^<link rel=^"icon^" href=^"!SITE_FAVICON
     echo ^<link href=^"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css^" rel=^"stylesheet^"^>
     echo ^<link href=^"style.css^" rel=^"stylesheet^"^>
     echo ^<meta property=^"og:type^" content=^"article^"^>
@@ -582,7 +582,7 @@ if not defined page_url set "page_url=!SITE_URL!pages/%%~n1.html"
     echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>!page_title!^</title^>
     echo ^<meta name=^"description^" content=^"!page_desc!^"^>
-    if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
+    echo ^<link rel=^"icon^" href=^"!SITE_FAVICON
     echo ^<link href=^"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css^" rel=^"stylesheet^"^>
     echo ^<link href=^"../style.css^" rel=^"stylesheet^"^>
     echo ^<meta property=^"og:type^" content=^"website^"^>
@@ -678,7 +678,7 @@ goto :eof
     echo ^<meta name=^"google-site-verification^" content=^"Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0^"^>
     echo ^<title^>#%~1 - !SITE_TITLE!^</title^>
     echo ^<meta name=^"description^" content=^"Posts tagged with %~1 - !SITE_TITLE!^"^>
-    if defined SITE_FAVICON echo ^<link rel=^"icon^" href=^"!SITE_FAVICON!^"^>
+    echo ^<link rel=^"icon^" href=^"!SITE_FAVICON
     echo ^<link href=^"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css^" rel=^"stylesheet^"^>
     echo ^<link href=^"../style.css^" rel=^"stylesheet^"^>
     echo ^<meta property=^"og:type^" content=^"website^"^>
