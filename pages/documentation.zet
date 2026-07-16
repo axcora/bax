@@ -11,6 +11,7 @@ LI:<a href="#install">Installation</a>
 LI:<a href="#config">Configuration</a>
 LI:<a href="#content">Content Creation</a>
 LI:<a href="#build">Build Commands</a>
+LI:<a href="#dev">Dev Commands</a>
 LI:<a href="#deploy">Deployment</a>
 LI:<a href="#seo">SEO Features</a>
 LI:<a href="#issues">Troubleshooting</a>
@@ -31,6 +32,8 @@ H3:Project Structure
 CODE:bax/
 CODE:├── bax.bat            # Windows build script
 CODE:├── bax.sh             # Linux/Mac build script
+CODE:├── run.bat            # Windows dev mode script
+CODE:├── run.sh             # Linux/Mac dev mode script
 CODE:├── config.zet         # Site configuration
 CODE:├── style.css          # Custom styles
 CODE:├── data/              # Blog posts
@@ -177,6 +180,19 @@ CODE:./bax.sh
 
 H3:Build Output
 P:After build, all generated files will be in the public/ folder.
+
+HR:
+
+H2:<div id="dev">Run Dev Mode</div>
+P:After building, run the development server to preview your site:
+
+H3:Windows
+CODE:run.bat
+
+H3:Linux / macOS
+CODE:./run.sh
+
+P:This will start a local server at http://127.0.0.1:3000.
 
 HR:
 

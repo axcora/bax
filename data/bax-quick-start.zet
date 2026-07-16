@@ -16,7 +16,7 @@ H2:Step 2 - Configure Your Site
 P:Edit config.zet with your site information:
 
 CODE:SITE_TITLE:My Awesome Site
-CODE:SITE_URL:https://myawesome.site
+CODE:SITE_URL:http://127.0.0.1:3000
 CODE:SITE_DESCRIPTION:My awesome static site
 CODE:SITE_IMAGE:https://myawesome.site/og-image.jpg
 CODE:SITE_FAVICON:/favicon.ico
@@ -28,9 +28,9 @@ CODE:NAV:
 CODE:  - text: Home
 CODE:    url: /
 CODE:  - text: About
-CODE:    url: /about
+CODE:    url: /pages/about.html
 CODE:  - text: Contact
-CODE:    url: /contact
+CODE:    url: /pages/contact.html
 
 H2:Step 3 - Create Content
 P:Create .zet files in the data folder. Each file becomes a blog post.
@@ -62,7 +62,19 @@ CODE:./bax.sh
 
 P:The build process takes milliseconds and generates all HTML files in the public folder.
 
-H2:Step 5 - Deploy
+H2:Step 5 - Run Dev Mode
+P:After building, run the development server to preview your site:
+
+H3:Windows
+CODE:run.bat
+
+H3:Linux / macOS
+CODE:./run.sh
+
+P:This will start a local server at http://127.0.0.1:3000 with auto-refresh support.
+
+
+H2:Step 6 - Deploy
 P:Upload the public folder to your hosting provider.
 
 H3:GitHub Pages

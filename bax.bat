@@ -256,10 +256,26 @@ set /a end_post=%1 * POSTS_PER_PAGE
         echo ^<span class=^"output^"^>  [!total_posts!] posts generated^</span^>
         echo ^</div^>
         echo ^<div class=^"terminal-line^"^>
+        echo ^<span class=^"output^"^>  [12] tags generated^</span^>
+        echo ^</div^>
+        echo ^<div class=^"terminal-line^"^>
+        echo ^<span class=^"output^"^>  [!total_pages!] pages generated^</span^>
+        echo ^</div^>
+        echo ^<div class=^"terminal-line^"^>
         echo ^<span class=^"output^"^>  Ready for production!^</span^>
         echo ^</div^>
         echo ^<div class=^"terminal-line^"^>
         echo ^<span class=^"output^"^>==========================================^</span^>
+        echo ^<div class=^"terminal-line^"^>
+        echo ^<span class=^"prompt^"^>$ ^</span^>
+        echo ^<span class=^"cmd^"^>./run.sh^</span^>
+        echo ^</div^>
+        echo ^<div class=^"terminal-line^"^>
+        echo ^<span class=^"output^"^>  Open localhost:3000^</span^>
+        echo ^</div^>
+        echo ^<div class=^"terminal-line^"^>
+        echo ^<span class=^"output^"^>==========================================^</span^>
+        echo ^</div^>
         echo ^</div^>
         echo ^</div^>
         echo ^</div^>
