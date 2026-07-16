@@ -1,0 +1,214 @@
+TITLE:Introducing BAX - Static Site Generator for Modern Web
+DATE:15 July 2026
+IMG:https://placehold.co/800x400/0f172a/ffffff?text=BAX+SSG
+DESC:Learn about BAX, a lightweight and SEO-friendly static site generator built with pure Batch and Bash scripts. Zero dependencies, pure performance.
+TAGS:bax static-site-generator ssg batch bash
+
+H2:What is BAX?
+P:BAX is a modern, lightweight, and SEO-friendly static site generator built with pure Batch (Windows) and Bash (Linux/Mac) scripts. No dependencies, no npm, no Python, no Ruby - just pure shell commands that transform simple .zet files into complete HTML websites.
+
+P:BAX stands for "Batch and Axcora X" - combining the power of Windows Batch and Linux Bash with Axcora Tech's commitment to simplicity and performance.
+
+H2:Why BAX?
+P:BAX was created to solve a simple problem: static site generators are too complex. Most require installing large frameworks, learning complex templating languages, or managing dependencies.
+
+H3:Key Benefits
+UL:
+LI:Zero Dependencies - No Node.js, npm, Python, Ruby, or Go required
+LI:Cross-platform - Works on Windows, Linux, and macOS
+LI:SEO Optimized - Auto-generates meta tags, Open Graph, and sitemaps
+LI:Simple .zet Format - Easier than Markdown, more intuitive
+LI:Lightning Fast - Builds in milliseconds, not seconds
+LI:Zero Configuration - Most sites work with minimal setup
+LI:Portable - Just copy the folder and run
+LI:Open Source - MIT License, free forever
+/UL:
+
+H2:How to Use BAX
+P:Getting started with BAX is incredibly simple:
+
+H3:Step 1 - Clone
+CODE:git clone https://github.com/mesinkasir/bax.git
+CODE:cd bax
+
+H3:Step 2 - Configure
+P:Edit config.zet with your site information:
+
+CODE:SITE_TITLE:My Awesome Site
+CODE:SITE_URL:https://myawesome.site
+CODE:SITE_DESCRIPTION:My awesome static site
+CODE:POSTS_PER_PAGE:6
+
+H3:Step 3 - Create Content
+P:Add .zet files to the data/ folder:
+
+CODE:TITLE:My First Blog Post
+CODE:DATE:15 July 2026
+CODE:IMG:https://example.com/image.jpg
+CODE:DESC:This is my first post
+CODE:TAGS:technology programming
+CODE:
+CODE:H2:Welcome!
+CODE:P:Hello world! This is my first post.
+
+H3:Step 4 - Build
+P:Run the build command for your operating system:
+
+CODE:bax.bat  # Windows
+CODE:./bax.sh # Linux/Mac
+
+H3:Step 5 - Deploy
+P:Upload the public/ folder to your hosting provider:
+
+UL:
+LI:GitHub Pages
+LI:Netlify
+LI:Vercel
+LI:Cloudflare Pages
+LI:Any web hosting
+/UL:
+
+HR:
+
+H2:BAX Features Deep Dive
+
+H3:SEO Built-in
+P:BAX automatically generates:
+UL:
+LI:Meta title and description tags
+LI:Open Graph tags (Facebook, LinkedIn)
+LI:Twitter Card tags
+LI:Sitemap.xml
+LI:Robots.txt
+/UL:
+
+H3:Simple Content Format
+P:The .zet format is designed for humans, not machines:
+
+CODE:TITLE:My Post
+CODE:H2:Introduction
+CODE:P:Simple content
+CODE:UL:
+CODE:LI:List item
+CODE:/UL:
+
+H3:Tag Support
+P:BAX auto-generates tag pages for better organization and SEO.
+
+H3:Pagination
+P:BAX automatically paginates your blog posts with clean URLs.
+
+H3:Responsive Design
+P:BAX uses Bootstrap 5 for beautiful, responsive design out of the box.
+
+HR:
+
+H2:Who is BAX For?
+P:BAX is perfect for:
+
+UL:
+LI:Bloggers wanting a simple, SEO-friendly site
+LI:Developers who hate installing dependencies
+LI:Non-technical users who want to build websites
+LI:Students learning about static sites
+LI:Documentation site creators
+LI:Portfolio websites
+LI:Small business landing pages
+LI:Anyone who wants a fast, simple website
+/UL:
+
+HR:
+
+H2:BAX vs Other Tools
+P:BAX offers unique advantages:
+
+TABLE:
+THEAD:
+TR:TH:Feature,TH:BAX,TH:Others
+/THEAD:
+TBODY:
+TR:TD:Dependencies,TD:None,TD:Node.js/Python/Ruby/Go
+TR:TD:Setup Time,TD:1 minute,TD:10-30 minutes
+TR:TD:Learning Curve,TD:Very Easy,TD:Moderate to Steep
+TR:TD:Build Speed,TD:Milliseconds,TD:Seconds to Minutes
+TR:TD:File Format,TD:Simple .zet,TD:Markdown/Complex
+TR:TD:Portability,TD:Copy and run,TD:Requires installation
+/TBODY:
+/TABLE:
+
+HR:
+
+H2:What's in a Name?
+P:BAX stands for:
+
+UL:
+LI:B - Batch (Windows script)
+LI:A - Axcora Tech (the creator)
+LI:X - Cross-platform excellence
+/UL:
+
+P:It's short, memorable, and represents the simplicity we value.
+
+HR:
+
+H2:The Philosophy of BAX
+P:BAX is built on these core principles:
+
+H3:Simplicity First
+P:Every feature in BAX is designed to be simple and intuitive. No unnecessary complexity.
+
+H3:Zero Dependencies
+P:BAX uses only what your operating system already has. No downloads, no installations, no conflicts.
+
+H3:Performance Matters
+P:BAX is optimized for speed. Build times are measured in milliseconds, not seconds.
+
+H3:SEO is Essential
+P:Good SEO should be automatic, not an afterthought. BAX handles it all.
+
+H3:Cross-platform by Default
+P:Your content should work everywhere. BAX runs on Windows, Linux, and macOS.
+
+HR:
+
+H2:Getting Help
+
+H3:Documentation
+P:Complete documentation is available at:
+CODE:https://bax.axcora.com/documentation
+
+H3:GitHub Issues
+P:Report bugs and request features:
+CODE:https://github.com/mesinkasir/bax/issues
+
+H3:Community
+P:Join our community and contribute:
+CODE:https://github.com/mesinkasir/bax
+
+HR:
+
+H2:Start Using BAX Today
+
+P:Don't wait - start building your static site with BAX now:
+
+CODE:git clone https://github.com/mesinkasir/bax.git
+CODE:cd bax
+CODE:bax.bat  # Windows
+CODE:./bax.sh # Linux/Mac
+
+BLOCKQUOTE:"Simplicity is the ultimate sophistication. BAX makes static sites simple again."
+
+HR:
+
+H2:Version History
+H3:v1.0 - July 2026
+UL:
+LI:Initial release
+LI:Full static site generation
+LI:SEO features
+LI:Pagination
+LI:Tag support
+LI:Cross-platform
+/UL:
+
+TAGS:bax static-site-generator ssg batch bash introduction

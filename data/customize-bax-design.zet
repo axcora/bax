@@ -1,0 +1,314 @@
+TITLE:How to Customize BAX Design - CSS Guide
+DATE:09 July 2026
+IMG:https://placehold.co/800x400/0f172a/ffffff?text=Customize+BAX
+DESC:Learn how to customize the look and feel of your BAX static site with custom CSS. Complete guide for styling BAX.
+TAGS:css customization design bootstrap style
+
+H2:BAX Uses Bootstrap 5
+P:BAX uses Bootstrap 5 for responsive layout and components. This means you get a modern, mobile-first design out of the box with minimal effort.
+
+P:Bootstrap 5 provides:
+UL:
+LI:Responsive grid system
+LI:Pre-built components (navbar, cards, buttons)
+LI:Utility classes for spacing and alignment
+LI:Typography and form styling
+LI:Cross-browser compatibility
+/UL:
+
+HR:
+
+H2:Edit style.css
+P:The style.css file in your project root controls the entire site design. This file overrides Bootstrap defaults and adds custom styles.
+
+H3:File Location
+CODE:BAX/
+CODE:├── style.css          # ⬅️ Edit this file
+CODE:├── bax.bat
+CODE:├── config.zet
+CODE:├── data/
+CODE:├── pages/
+CODE:└── public/
+
+H3:How It Works
+P:During build, BAX copies style.css to the public/ folder. Any changes you make to style.css will be reflected in your site.
+
+HR:
+
+H2:Customize Colors
+P:BAX uses a gradient color scheme with primary blue to purple. Here's how to change it:
+
+H3:Primary Button Color
+CODE:.btn-primary {
+CODE:    background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+CODE:    border: none !important;
+CODE:    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+CODE:}
+
+P:Change the colors to match your brand:
+
+CODE:.btn-primary {
+CODE:    background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+CODE:    box-shadow: 0 4px 14px rgba(255, 107, 107, 0.25);
+CODE:}
+
+H3:Navbar Brand Gradient
+CODE:.navbar-brand {
+CODE:    background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
+CODE:    -webkit-background-clip: text;
+CODE:    -webkit-text-fill-color: transparent;
+CODE:}
+
+H3:Divider Gradient
+CODE:.divider {
+CODE:    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+CODE:}
+
+H3:Tag Buttons Hover
+CODE:.post-tags .btn:hover {
+CODE:    background: #3b82f6 !important;
+CODE:    color: #fff !important;
+CODE:    border-color: #3b82f6 !important;
+CODE:}
+
+HR:
+
+H2:Customize Typography
+P:Change fonts, sizes, and text styles:
+
+H3:Body Font
+CODE:body {
+CODE:    font-family: 'Inter', sans-serif;
+CODE:    color: #0f172a;
+CODE:    line-height: 1.7;
+CODE:}
+
+P:Use a custom font from Google Fonts:
+
+CODE:@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+CODE:
+CODE:body {
+CODE:    font-family: 'Playfair Display', serif;
+CODE:}
+
+H3:Headings
+CODE:.display-5 {
+CODE:    font-weight: 800 !important;
+CODE:    letter-spacing: -1px;
+CODE:    color: #0f172a;
+CODE:}
+
+CODE:.post-title {
+CODE:    font-size: 1.1rem !important;
+CODE:    font-weight: 700 !important;
+CODE:    line-height: 1.4;
+CODE:}
+
+HR:
+
+H2:Customize Cards
+P:Blog post cards are the main content display:
+
+H3:Card Styling
+CODE:.post-card {
+CODE:    background: #ffffff;
+CODE:    border-radius: 20px;
+CODE:    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+CODE:    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+CODE:    border: 1px solid rgba(0, 0, 0, 0.03);
+CODE:}
+
+H3:Card Hover Effect
+CODE:.post-card:hover {
+CODE:    transform: translateY(-8px);
+CODE:    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.10);
+CODE:    border-color: rgba(59, 130, 246, 0.10);
+CODE:}
+
+H3:Card Image
+CODE:.post-card img {
+CODE:    border-radius: 16px;
+CODE:    object-fit: cover;
+CODE:    transition: transform 0.6s ease;
+CODE:}
+CODE:
+CODE:.post-card:hover img {
+CODE:    transform: scale(1.02);
+CODE:}
+
+HR:
+
+H2:Customize Navbar
+P:The navbar has a glass-morphism effect:
+
+H3:Navbar Background
+CODE:.navbar {
+CODE:    background: rgba(255, 255, 255, 0.85) !important;
+CODE:    backdrop-filter: blur(20px) saturate(180%);
+CODE:    -webkit-backdrop-filter: blur(20px) saturate(180%);
+CODE:    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+CODE:}
+
+H3:Navbar Links
+CODE:.nav-link {
+CODE:    font-weight: 500 !important;
+CODE:    color: #334155 !important;
+CODE:    padding: 0.5rem 1rem !important;
+CODE:    border-radius: 12px;
+CODE:    transition: all 0.25s ease;
+CODE:}
+
+CODE:.nav-link:hover {
+CODE:    color: #0f172a !important;
+CODE:    background: rgba(59, 130, 246, 0.06);
+CODE:}
+
+H3:Navbar Link Underline
+CODE:.nav-link::after {
+CODE:    content: '';
+CODE:    position: absolute;
+CODE:    bottom: 4px;
+CODE:    left: 50%;
+CODE:    transform: translateX(-50%);
+CODE:    width: 0;
+CODE:    height: 2px;
+CODE:    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+CODE:    transition: width 0.3s ease;
+CODE:}
+
+CODE:.nav-link:hover::after {
+CODE:    width: 60%;
+CODE:}
+
+HR:
+
+H2:Customize Layout
+P:Change container width, spacing, and layout:
+
+H3:Container Width
+CODE:.container {
+CODE:    max-width: 1200px !important;
+CODE:}
+
+H3:Spacing
+CODE:.post-content {
+CODE:    padding: 2.5rem;
+CODE:    background: #ffffff;
+CODE:    border-radius: 24px;
+CODE:}
+
+H3:Borders and Shadows
+CODE:.rounded-5 {
+CODE:    border-radius: 24px !important;
+CODE:}
+
+CODE:.shadow-sm {
+CODE:    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+CODE:}
+
+HR:
+
+H2:Customize Footer
+P:Change footer styles:
+
+CODE:footer {
+CODE:    background: rgba(255, 255, 255, 0.85) !important;
+CODE:    backdrop-filter: blur(10px);
+CODE:    border-top: 1px solid rgba(0, 0, 0, 0.04) !important;
+CODE:}
+CODE:
+CODE:footer a {
+CODE:    font-weight: 600;
+CODE:    color: #0f172a !important;
+CODE:}
+CODE:
+CODE:footer a:hover {
+CODE:    color: #3b82f6 !important;
+CODE:}
+
+HR:
+
+H2:Customize Responsive Design
+P:Add responsive styles for different screen sizes:
+
+CODE:@media (max-width: 768px) {
+CODE:    .post-content {
+CODE:        padding: 1.5rem;
+CODE:    }
+CODE:
+CODE:    .post-content-title {
+CODE:        font-size: 1.6rem !important;
+CODE:    }
+CODE:
+CODE:    .display-5 {
+CODE:        font-size: 2rem !important;
+CODE:    }
+CODE:}
+
+HR:
+
+H2:Complete CSS Example
+P:Here's a complete dark theme example:
+
+CODE:/* Dark Theme */
+CODE:body {
+CODE:    background: #0f172a;
+CODE:    color: #e2e8f0;
+CODE:}
+CODE:
+CODE:.post-card {
+CODE:    background: #1e293b;
+CODE:    border-color: rgba(255, 255, 255, 0.05);
+CODE:}
+CODE:
+CODE:.post-title {
+CODE:    color: #f8fafc !important;
+CODE:}
+CODE:
+CODE:.post-desc {
+CODE:    color: #94a3b8;
+CODE:}
+CODE:
+CODE:.btn-primary {
+CODE:    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+CODE:}
+CODE:
+CODE:.navbar {
+CODE:    background: rgba(15, 23, 42, 0.9) !important;
+CODE:    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+CODE:}
+CODE:
+CODE:.nav-link {
+CODE:    color: #94a3b8 !important;
+CODE:}
+CODE:
+CODE:.nav-link:hover {
+CODE:    color: #f8fafc !important;
+CODE:}
+
+HR:
+
+H2:Quick Tips
+UL:
+LI:Always use !important sparingly - only when overriding Bootstrap
+LI:Test your changes on different screen sizes
+LI:Use browser dev tools to inspect elements
+LI:Keep a backup of your original style.css
+LI:Make changes incrementally and test often
+/UL:
+
+HR:
+
+H2:Need Help?
+P:Check these resources:
+
+UL:
+LI:Bootstrap 5 Documentation: https://getbootstrap.com/docs/5.0
+LI:W3Schools CSS Tutorial: https://www.w3schools.com/css
+LI:Google Fonts: https://fonts.google.com
+LI:Color Palette Generator: https://coolors.co
+/UL:
+
+BLOCKQUOTE:"Design is not just what it looks like. Design is how it works."
+
+TAGS:css customization design bootstrap styling

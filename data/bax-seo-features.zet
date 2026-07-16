@@ -1,0 +1,184 @@
+TITLE:BAX SEO Features - Boost Your Search Rankings
+DATE:12 July 2026
+IMG:https://placehold.co/800x400/0f172a/ffffff?text=BAX+SEO
+DESC:Learn how BAX automatically generates SEO-friendly meta tags, Open Graph, and Twitter Cards to boost your search rankings.
+TAGS:bax seo meta-tags opengraph twitter-cards
+
+H2:SEO Made Simple with BAX
+P:BAX automatically generates all the SEO meta tags you need for better search engine rankings. No plugins, no extra configuration - just pure SEO magic built right in!
+
+P:Search engines love well-structured HTML with proper meta tags. BAX takes care of all of this for you, so you can focus on creating great content.
+
+HR:
+
+H2:Auto-Generated Meta Tags
+P:BAX automatically generates the following meta tags for every page:
+
+H3:Title Tag
+P:BAX uses the post/page title or falls back to SITE_TITLE from config.
+P:<title>Your Post Title - Your Site Title</title>
+
+H3:Description Meta
+P:BAX uses the post/page description or falls back to SITE_DESCRIPTION.
+P:<meta name="description" content="Your post description"/>
+
+H3:Open Graph Tags (Facebook, LinkedIn)
+P:BAX generates complete Open Graph tags for social sharing:
+UL:
+LI:og:type - website or article
+LI:og:title - post/page title
+LI:og:description - post/page description
+LI:og:image - post/page image or default
+LI:og:url - post/page URL
+/UL:
+
+CODE:< meta property="og:type" content="article">
+CODE:< meta property="og:title" content="Your Post Title">
+CODE:< meta property="og:description" content="Your description">
+CODE:< meta property="og:image" content="https://example.com/image.jpg">
+
+H3:Twitter Card Tags
+P:BAX generates Twitter Card tags for better sharing on Twitter:
+UL:
+LI:twitter:card - summary_large_image
+LI:twitter:title - post/page title
+LI:twitter:description - post/page description
+LI:twitter:image - post/page image or default
+/UL:
+
+CODE:< meta name="twitter:card" content="summary_large_image">
+CODE:< meta name="twitter:title" content="Your Post Title">
+CODE:< meta name="twitter:description" content="Your description">
+CODE:< meta name="twitter:image" content="https://example.com/image.jpg">
+
+H3:Generator Meta
+P:BAX includes a generator meta tag for branding:
+CODE:< meta name="generator" content="BAX v1.0 - Static Site Generator by Axcora">
+
+HR:
+
+H2:Priority System
+P:BAX uses a smart priority system for SEO metadata:
+
+H3:Priority Order
+OL:
+LI:Post/Page specific (highest priority)
+LI:Site-wide config (fallback)
+LI:Default values (last resort)
+/OL:
+
+P:This means you can set global values in config.zet and override them for specific posts or pages.
+
+H3:Example
+CODE:# config.zet - Global values
+CODE:SITE_TITLE:My Awesome Site
+CODE:SITE_DESCRIPTION:This is my awesome static site
+CODE:SITE_IMAGE:https://example.com/default-og.jpg
+
+CODE:# data/post.zet - Override for this post
+CODE:TITLE:My Special Post
+CODE:DESC:This post has its own description
+CODE:IMG:https://example.com/post-image.jpg
+
+HR:
+
+H2:Sitemap and Robots.txt
+P:BAX automatically generates two essential SEO files:
+
+H3:Sitemap.xml
+P:BAX generates a sitemap.xml that includes:
+UL:
+LI:All blog posts
+LI:All static pages
+LI:Tag pages
+LI:Index pages with pagination
+LI:Last modified dates
+LI:Change frequencies
+LI:Priority levels
+/UL:
+
+CODE:< ?xml version="1.0" encoding="UTF-8"?>
+CODE:< urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+CODE:    < url>
+CODE:        < loc>https://mysite.com/< / loc>
+CODE:        < lastmod>2026-07-15T13:30:00< / lastmod>
+CODE:        < changefreq>daily< / changefreq>
+CODE:        < priority>1.0< / priority>
+CODE:    < / url>
+CODE:< / urlset>
+
+H3:Robots.txt
+P:BAX generates robots.txt to guide search engine crawlers:
+CODE:User-agent: *
+CODE:Allow: /
+CODE:Disallow: /pages/
+CODE:Disallow: /tags/
+CODE:Sitemap: https://mysite.com/sitemap.xml
+
+HR:
+
+H2:Best Practices for SEO with BAX
+
+H3:1. Always Set Descriptions
+P:Every post and page should have a description:
+CODE:DESC:This is my post description
+
+H3:2. Use Descriptive Titles
+P:Make your titles descriptive and include keywords:
+CODE:TITLE:How to Build Static Sites with BAX
+
+H3:3. Add Tags
+P:Tags help organize content and create tag pages:
+CODE:TAGS:static-site bax tutorial
+
+H3:4. Add Images
+P:Images improve engagement and social sharing:
+CODE:IMG:https://example.com/image.jpg
+
+H3:5. Set Your Site URL
+P:Always set SITE_URL in config.zet:
+CODE:SITE_URL:https://mysite.com
+
+HR:
+
+H2:SEO Checklist
+P:BAX automatically handles these SEO tasks:
+
+UL:
+LI:✅ Title tags for every page
+LI:✅ Meta descriptions
+LI:✅ Open Graph tags
+LI:✅ Twitter Card tags
+LI:✅ Sitemap.xml
+LI:✅ Robots.txt
+LI:✅ Semantic HTML structure
+LI:✅ Responsive design
+LI:✅ Fast loading times
+LI:✅ Clean URL structure
+/UL:
+
+HR:
+
+H2:Why SEO Matters
+P:Good SEO helps you:
+UL:
+LI:Rank higher in search results
+LI:Get more organic traffic
+LI:Improve user experience
+LI:Increase brand visibility
+LI:Generate more leads and sales
+/UL:
+
+BLOCKQUOTE:"SEO is not about tricking Google. It's about creating great content that people want to read and share."
+
+HR:
+
+H2:Get Started with BAX Today
+P:Start building your SEO-friendly static site with BAX now:
+
+CODE:git clone https://github.com/mesinkasir/bax.git
+CODE:cd bax
+CODE:bax.bat  # Windows
+CODE:./bax.sh # Linux/Mac
+
+TAGS:bax seo meta-tags opengraph twitter-cards sitemap robots

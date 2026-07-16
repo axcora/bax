@@ -1,0 +1,301 @@
+TITLE:BAX Documentation - Complete Guide
+DESC:Complete documentation for BAX static site generator - installation, configuration, content creation, and deployment.
+IMG:https://placehold.co/1200x400/0f172a/ffffff?text=BAX+Docs
+
+H1:BAX Documentation
+
+H2:Table of Contents
+UL:
+LI:<a href="#intro">Introduction</a>
+LI:<a href="#install">Installation</a>
+LI:<a href="#config">Configuration</a>
+LI:<a href="#content">Content Creation</a>
+LI:<a href="#build">Build Commands</a>
+LI:<a href="#deploy">Deployment</a>
+LI:<a href="#seo">SEO Features</a>
+LI:<a href="#issues">Troubleshooting</a>
+/UL:
+HR:
+
+H2:<div id="intro">Introduction</div>
+P:<a href="/pages/documentation.html">BAX is a modern, lightweight, and SEO-friendly static site generator built with pure Batch and Bash scripts. No dependencies, no bloat - just pure static site magic!</a>
+P:BAX stands for Batch and Axcora X, combining the power of Windows Batch and Linux Bash to create a cross-platform static site generator.
+
+H2:<div id="install">Installation</div>
+
+H3:Clone the Repository
+CODE:git clone https://github.com/mesinkasir/bax.git
+CODE:cd bax
+
+H3:Project Structure
+CODE:bax/
+CODE:├── bax.bat            # Windows build script
+CODE:├── bax.sh             # Linux/Mac build script
+CODE:├── config.zet         # Site configuration
+CODE:├── style.css          # Custom styles
+CODE:├── data/              # Blog posts
+CODE:│   └── *.zet
+CODE:├── pages/             # Static pages
+CODE:│   └── *.zet
+CODE:└── public/            # Generated output (auto-created)
+CODE:    ├── index.html
+CODE:    ├── pages/
+CODE:    ├── tags/
+CODE:    └── *.html
+
+HR:
+
+H2:<div id="config">Configuration</div>
+
+H3:Create config.zet
+P:Create a file named config.zet in your project root with the following structure:
+
+CODE:SITE_TITLE:My Awesome Site
+CODE:SITE_URL:https://myawesome.site
+CODE:SITE_DESCRIPTION:My awesome static site
+CODE:SITE_IMAGE:https://myawesome.site/og-image.jpg
+CODE:SITE_FAVICON:/favicon.ico
+CODE:POSTS_PER_PAGE:6
+
+H3:Navigation
+P:Add navigation menu items in config.zet:
+
+CODE:NAV:
+CODE:  - text: Home
+CODE:    url: /
+CODE:  - text: About
+CODE:    url: /about
+CODE:  - text: Portfolio
+CODE:    url: /portfolio
+CODE:  - text: Contact
+CODE:    url: /contact
+
+H3:Configuration Options
+TABLE:
+THEAD:
+TR:TH:Option,TH:Description,TH:Required
+/THEAD:
+TBODY:
+TR:TD:SITE_TITLE,TD:Site title for navbar and SEO,TD:Yes
+TR:TD:SITE_URL,TD:Site URL with or without trailing slash,TD:Yes
+TR:TD:SITE_DESCRIPTION,TD:Site description for SEO,TD:No
+TR:TD:SITE_IMAGE,TD:Default OG image for social sharing,TD:No
+TR:TD:SITE_FAVICON,TD:Path to favicon,TD:No
+TR:TD:POSTS_PER_PAGE,TD:Number of posts per page,TD:No (default: 6)
+TR:TD:NAV,TD:Navigation menu items,TD:No
+/TBODY:
+/TABLE:
+
+HR:
+
+H2:<div id="content">Content Creation</div>
+
+H3:Creating Blog Posts
+P:Create .zet files in the data/ folder. Each file becomes a blog post.
+
+CODE:TITLE:My First Blog Post
+CODE:DATE:15 July 2026
+CODE:IMG:https://example.com/image.jpg
+CODE:DESC:This is my first blog post
+CODE:TAGS:technology programming tutorial
+CODE:
+CODE:H2:Introduction
+CODE:P:Welcome to my blog!
+CODE:
+CODE:H3:Sub Section
+CODE:P:This is a sub section.
+CODE:
+CODE:UL:
+CODE:LI:Item one
+CODE:LI:Item two
+CODE:/UL:
+CODE:
+CODE:TAGS:technology programming
+
+H3:Supported Content Types
+TABLE:
+THEAD:
+TR:TH:Tag,TH:Description,TH:Example
+/THEAD:
+TBODY:
+TR:TD:TITLE,TD:Post title,TD:TITLE:My Post
+TR:TD:DATE,TD:Publication date,TD:DATE:15 July 2026
+TR:TD:IMG,TD:Featured image URL,TD:IMG:https://example.com/image.jpg
+TR:TD:DESC,TD:Post description,TD:DESC:My description
+TR:TD:TAGS,TD:Space-separated tags,TD:TAGS:tech programming
+TR:TD:H2-H6,TD:Headings,TD:H2:Section Title
+TR:TD:P,TD:Paragraph,TD:P:My paragraph text
+TR:TD:UL/OL,TD:Lists,TD:UL: / /UL:
+TR:TD:LI,TD:List item,TD:LI:Item
+TR:TD:CODE,TD:Code block,TD:CODE:console.log('Hello')
+TR:TD:TABLE,TD:HTML table,TD:TABLE: / /TABLE:
+TR:TD:BLOCKQUOTE,TD:Blockquote,TD:BLOCKQUOTE:Quote text
+TR:TD:HR,TD:Horizontal rule,TD:HR:
+/TBODY:
+/TABLE:
+
+H3:Creating Static Pages
+P:Create .zet files in the pages/ folder for static pages like About, Contact, etc.
+
+CODE:TITLE:About Me
+CODE:DESC:Learn more about me
+CODE:IMG:https://example.com/about.jpg
+CODE:
+CODE:H1:About Me
+CODE:P:Welcome to my about page.
+CODE:
+CODE:H2:My Story
+CODE:P:I am a web developer...
+
+H3:URL Field
+P:You can add a custom URL field in pages:
+
+CODE:TITLE:About Me
+CODE:URL:https://mywebsite.com/about
+
+HR:
+
+H2:<div id="build">Build Commands</div>
+
+H3:Windows
+CODE:bax.bat
+
+H3:Linux / macOS
+CODE:chmod +x bax.sh
+CODE:./bax.sh
+
+H3:Clean Build
+P:To clean and rebuild:
+
+CODE:# Windows
+CODE:rmdir /s /q public
+CODE:bax.bat
+CODE:
+CODE:# Linux/macOS
+CODE:rm -rf public
+CODE:./bax.sh
+
+H3:Build Output
+P:After build, all generated files will be in the public/ folder.
+
+HR:
+
+H2:<div id="deploy">Deployment</div>
+
+H3:GitHub Pages
+P:BAX includes a ready-to-use <a href="/pages/documentation.html">GitHub Actions workflow</a>.
+
+CODE:# Rename workflow file
+CODE:mv .github/workflows/deploy.yml.example .github/workflows/deploy.yml
+CODE:
+CODE:# Push to GitHub
+CODE:git add .
+CODE:git commit -m "Deploy BAX site"
+CODE:git push origin main
+
+P:Then enable GitHub Pages in your repository settings.
+
+H3:Netlify
+UL:
+LI:Build command: ./bax.sh
+LI:Publish directory: public/
+/UL:
+
+H3:Vercel
+UL:
+LI:Build command: ./bax.sh
+LI:Output directory: public/
+/UL:
+
+H3:Cloudflare Pages
+UL:
+LI:Build command: ./bax.sh
+LI:Build output: public/
+/UL:
+
+HR:
+
+H2:<div id="seo">SEO Features</div>
+
+H3:Auto-Generated Meta Tags
+P:BAX automatically generates <a href="/pages/documentation.html">SEO-friendly meta tags</a>:
+
+UL:
+LI:Title tag
+LI:Description meta
+LI:Open Graph tags (Facebook, LinkedIn)
+LI:Twitter Card tags (Twitter)
+LI:Generator meta
+/UL:
+
+H3:Sitemap & Robots
+P:BAX automatically generates:
+UL:
+LI:sitemap.xml - for search engines
+LI:robots.txt - for crawler instructions
+/UL:
+
+H3:Priority System
+P:BAX uses a priority system for SEO metadata:
+OL:
+LI:Post/Page specific (highest priority)
+LI:Site-wide config (fallback)
+LI:Default values (last resort)
+/OL:
+
+HR:
+
+H2:<div id="issues">Troubleshooting</div>
+
+H3:Error: 'bax.bat' is not recognized
+P:Make sure you are in the correct directory where bax.bat is located.
+
+H3:Error: 'chmod' not recognized
+P:This is a Linux command. On Windows, just run bax.bat directly.
+
+H3:Error: 'public' folder not created
+P:Run bax.bat or bax.sh to generate the output.
+
+H3:Error: 'data' folder is empty
+P:Add .zet files to the data/ folder before building.
+
+H3:Error: 'config.zet' not found
+P:Create config.zet in your project root.
+
+HR:
+
+H2:Contributing
+P:We welcome contributions! Here's how:
+OL:
+LI:Fork the repository
+LI:Create a feature branch
+LI:Commit your changes
+LI:Push to the branch
+LI:Open a Pull Request
+/OL:
+P:Visit: https://github.com/mesinkasir/bax
+
+HR:
+
+H2:Support
+P:Support us Buy Me a Coffee
+UL:
+LI:<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN">Via Paypall</a>
+LI:<a href="https://creativitaz.gumroad.com/coffee">Via Gumroad</a>
+LI:<a href="https://github.com/sponsors/mesinkasir">Via Github</a>
+/UL:
+
+H2:Help
+P:If you need help or have questions:
+UL:
+LI:Website: https://bax.axcora.com
+LI:Email: axcora@gmail.com
+/UL:
+
+HR:
+
+H2:License
+P:BAX is open-source under the MIT License.
+P:Copyright (c) Axcora Tech
+
+TAGS:documentation guide help

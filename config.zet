@@ -1,0 +1,38 @@
+SITE_TITLE:BAX Magic SSG
+SITE_URL:https://bax.axcora.com
+SITE_DESCRIPTION:Modern static site generator built with Batch and Bash. Zero dependencies, cross-platform, and SEO-friendly.
+SITE_KEYWORDS:static site generator, ssg, batch, bash, jamstack, seo friendly
+SITE_AUTHOR:Axcora Tech
+SITE_TWITTER_HANDLE:@axcoratech
+SITE_OG_TYPE:website
+SITE_IMAGE:/images/axcoranewlogored.webp
+SITE_FAVICON:/images/axcoranewlogored.webp
+POSTS_PER_PAGE:6
+
+HERO_TITLE:Build Fast Sites with BAX
+HERO_SUBTITLE:Static Site Generator
+HERO_DESC:Modern static site generator built with Batch. Zero dependencies, cross-platform, and SEO-friendly.
+HERO_BTN1_TEXT:Download BAX
+HERO_BTN1_URL:https://creativitaz.gumroad.com/l/bax
+HERO_BTN2_TEXT:Documentation
+HERO_BTN2_URL:pages/documentation.html
+
+FEATURES_TITLE:Why Choose BAX?
+FEATURES_SUBTITLE:Simple, fast, and SEO-friendly static site generator
+
+NAV:
+  - text: Home
+    url: /
+  - text: About
+    url: /pages/about.html
+  - text: Documentation
+    url: /pages/documentation.html
+  - text: Support
+    url: /pages/support.html
+  - text: FAQ
+    url: /pages/faq.html
+  - text: Download
+    url: https://creativitaz.gumroad.com/l/bax
+  - text: Github
+    url: https://github.com/mesinkasir/bax
+

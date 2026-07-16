@@ -1,0 +1,195 @@
+TITLE:BAX FAQ - Frequently Asked Questions
+DESC:Common questions about BAX static site generator - answered.
+IMG:https://placehold.co/1200x400/0f172a/ffffff?text=FAQ
+
+H1:Frequently Asked Questions
+
+H2:General Questions
+
+H3:What is BAX?
+P:BAX is a <a href="/pages/faq.html">lightweight, modern, and SEO-friendly static site generator built with pure Batch (Windows) and Bash (Linux/Mac) scripts</a>. It converts simple .zet files into complete HTML websites with zero dependencies.
+
+H3:Why BAX instead of Hugo or Jekyll?
+P:BAX is simpler and has zero dependencies. While Hugo requires Go and Jekyll requires Ruby, BAX only needs your operating system's built-in shell. It's perfect for small projects, personal blogs, and people who want to understand the build process.
+
+H3:<a href="/pages/faq.html">Is BAX SEO-friendly?</a>
+P:Yes! BAX automatically generates:
+UL:
+LI:Meta title and description tags
+LI:Open Graph tags (Facebook, LinkedIn)
+LI:Twitter Card tags
+LI:Sitemap.xml for search engines
+LI:Robots.txt for crawler instructions
+/UL:
+
+H3:Does BAX support tags?
+P:Yes! BAX automatically generates tag pages for all tags you add to your posts.
+
+H3:Can I customize the design?
+P:Yes! Edit the style.css file in your project root. BAX uses <a href="https://getbootstrap.com" target="_blank">Bootstrap</a>, so you can easily customize colors, fonts, and layouts.
+
+H3:Is BAX free?
+P:Yes! BAX is open-source under the MIT License. Free to use, modify, and distribute.
+
+HR:
+
+H2:Technical Questions
+
+H3:Does BAX require Node.js?
+P:No! BAX uses only shell scripts (Batch for Windows, Bash for Linux/Mac). No <a href="https://nodejs.org">Node.js</a>, no npm, no Python - just pure shell commands.
+
+H3:How fast is BAX?
+P:BAX builds sites in milliseconds. Most builds take less than 1 second, even with dozens of posts.
+
+H3:Does BAX support Markdown?
+P:BAX uses its own .zet format, which is similar to Markdown but simpler. It supports headings, paragraphs, lists, tables, code blocks, and blockquotes.
+
+H3:What content types does BAX support?
+P:BAX supports:
+UL:
+LI:Headings (H1-H6)
+LI:Paragraphs
+LI:Ordered and unordered lists
+LI:Tables
+LI:Code blocks
+LI:Blockquotes
+LI:Horizontal rules
+LI:Images
+LI:Tags
+/UL:
+
+H3:Can I use BAX on Windows?
+P:Yes! BAX includes bax.bat for Windows. Just double-click or run it from Command Prompt.
+
+H3:Can I use BAX on Linux or Mac?
+P:Yes! BAX includes bax.sh for Linux and macOS. Make it executable and run it.
+
+HR:
+
+H2:Content Questions
+
+H3:How do I create a blog post?
+P:Create a .zet file in the data/ folder. Each file becomes a blog post.
+
+CODE:TITLE:My Post Title
+CODE:DATE:15 July 2026
+CODE:IMG:https://example.com/image.jpg
+CODE:DESC:My post description
+CODE:TAGS:tech programming
+CODE:
+CODE:H2:Introduction
+CODE:P:My content here...
+
+H3:How do I create a static page?
+P:Create a .zet file in the pages/ folder. Each file becomes a static page like About, Contact, etc.
+
+CODE:TITLE:About Me
+CODE:DESC:Learn about me
+CODE:
+CODE:H1:About Me
+CODE:P:My story here...
+
+H3:How do I add tags to my posts?
+P:Add a TAGS line in your .zet file with space-separated tags:
+
+CODE:TAGS:technology programming tutorial
+
+H3:How do I add images to my posts?
+P:Add an IMG line with the image URL:
+
+CODE:IMG:https://example.com/image.jpg
+
+HR:
+
+H2:Deployment Questions
+
+H3:Can I deploy to GitHub Pages?
+P:Yes! BAX includes a GitHub Actions workflow. Rename deploy.yml.example to deploy.yml and push to GitHub.
+
+CODE:mv .github/workflows/deploy.yml.example .github/workflows/deploy.yml
+CODE:git push origin main
+
+H3:Can I use Netlify or Vercel?
+P:Yes! Both platforms support BAX:
+UL:
+LI:Build command: ./bax.sh
+LI:Publish directory: public/
+LI:Output directory: public/
+/UL:
+
+H3:Can I use Cloudflare Pages?
+P:Yes! Set the build command to ./bax.sh and build output to public/.
+
+H3:Where are the generated files?
+P:All generated files are in the public/ folder. Upload this folder to your hosting provider.
+
+HR:
+
+H2:Troubleshooting
+
+H3:Error: 'bax.bat' is not recognized
+P:Make sure you are in the correct directory where bax.bat is located. Use cd to navigate to the BAX project folder.
+
+H3:Error: 'config.zet' not found
+P:Create a config.zet file in your project root. Use the example from the documentation.
+
+H3:Error: 'data' folder is empty
+P:Add .zet files to the data/ folder before building.
+
+H3:Error: 'public' folder not created
+P:Run bax.bat or bax.sh to generate the output. The public folder is created automatically.
+
+H3:My site is not showing changes
+P:Try a clean build:
+CODE:rmdir /s /q public  # Windows
+CODE:bax.bat
+
+CODE:rm -rf public      # Linux/Mac
+CODE:./bax.sh
+
+HR:
+
+H2:Community Questions
+
+H3:Where can I report issues?
+P:Report issues on GitHub:
+CODE:https://github.com/mesinkasir/bax/issues
+
+H3:Can I contribute to BAX?
+P:Yes! We welcome contributions:
+OL:
+LI:Fork the repository
+LI:Create a feature branch
+LI:Make your changes
+LI:Submit a pull request
+/OL:
+
+H3:Where can I get help?
+P:Check these resources:
+UL:
+LI:Documentation: <a href="https://bax.axcora.com/documentation.html">https://bax.axcora.com/documentation.html</a>
+LI:GitHub Issues: <a href="https://github.com/mesinkasir/bax/issues">https://github.com/mesinkasir/bax/issues</a>
+LI:Website: <a href="https://bax.axcora.com">https://bax.axcora.com</a>
+/UL:
+
+HR:
+
+H2:Support
+P:Support us Buy Me a Coffee
+UL:
+LI:<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN">Via Paypall</a>
+LI:<a href="https://creativitaz.gumroad.com/coffee">Via Gumroad</a>
+LI:<a href="https://github.com/sponsors/mesinkasir">Via Github</a>
+/UL:
+
+HR:
+
+H2:Quick Links
+UL:
+LI:GitHub: <a href="https://github.com/mesinkasir/bax">https://github.com/mesinkasir/bax</a>
+LI:Documentation: <a href="https://bax.axcora.com/documentation.html">https://bax.axcora.com/documentation.html</a>
+LI:Support: <a href="https://bax.axcora.com/support.html">https://bax.axcora.com/support.html</a>
+LI:Website: <a href="https://bax.axcora.com">https://bax.axcora.com</a>
+/UL:
+
+TAGS:faq questions help support

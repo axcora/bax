@@ -1,0 +1,87 @@
+TITLE:Support BAX - Donations and Community
+DESC:Support the development of BAX through donations and community contributions.
+IMG:https://placehold.co/1200x400/0f172a/ffffff?text=Support+BAX
+
+H1:Support BAX
+
+H2:Why Support BAX?
+P:BAX is an open-source project built with ❤️ by Axcora Tech. Your support helps us maintain, improve, and add new features to BAX.
+P:Every contribution, no matter how small, makes a difference!
+
+HR:
+
+H2:Donation Options
+
+H3:GitHub Sponsors
+P:Become a sponsor on GitHub and help us keep BAX free and open-source.
+P:<a href="https://github.com/sponsors/mesinkasir" class="btn btn-dark">Support on Github</a>
+CODE:https://github.com/sponsors/mesinkasir
+P:GitHub Sponsors offers monthly or one-time donations.
+
+H3:PayPal
+P:Send a one-time donation via PayPal.
+P:<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN" class="btn btn-primary">Support on Paypal</a>
+CODE:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN
+P:PayPal accepts credit cards, debit cards, and bank transfers.
+
+H3:Buy Me a Coffee
+P:Buy us a coffee on Gumroad.
+CODE:https://creativitaz.gumroad.com/coffee
+P:<a href="https://creativitaz.gumroad.com/coffee" class="btn btn-warning">Buy Me a Coffee</a>
+P:Support us with a small contribution and keep us motivated!
+
+HR:
+
+H2:Community
+
+H3:GitHub
+P:Report issues, contribute code, or request features:
+CODE:https://github.com/mesinkasir/bax
+
+H3:Website
+P:Visit our official website for more information:
+CODE:https://bax.axcora.com
+
+H3:Documentation
+P:Read the complete documentation:
+CODE:https://bax.axcora.com/pages/documentation.html
+
+HR:
+
+H2:Contributing
+P:We welcome contributions from everyone! Here's how you can help:
+
+H3:Code Contributions
+OL:
+LI:Fork the repository
+LI:Create a feature branch
+LI:Make your changes
+LI:Submit a pull request
+/OL:
+
+H3:Report Issues
+P:Found a bug? Report it on GitHub Issues:
+CODE:https://github.com/mesinkasir/bax/issues
+
+H3:Spread the Word
+P:Share BAX with your friends and colleagues. Star us on GitHub!
+
+HR:
+
+H2:Acknowledgments
+P:BAX is built with ❤️ by:
+
+UL:
+LI:Axcora Tech - Development and Maintenance
+LI:Bootstrap - CSS Framework
+LI:Open Source Community - Inspiration and Support
+/UL:
+
+HR:
+
+H2:Thank You!
+P:Thank you for supporting BAX! Your contributions help us keep the project alive and growing.
+
+BLOCKQUOTE:"Open source is not just about code. It's about community, collaboration, and making the web better for everyone."
+
+TAGS:support donation community sponsor

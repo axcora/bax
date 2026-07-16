@@ -1,0 +1,120 @@
+TITLE:BAX Roadmap - What's Coming Next
+DATE:08 July 2026
+IMG:https://placehold.co/800x400/0f172a/ffffff?text=BAX+Roadmap
+DESC:Learn about the upcoming features and development roadmap for BAX static site generator.
+TAGS:bax roadmap features future
+
+H2:BAX is Continuously Improving
+P:We're constantly working to make BAX better. Here's what we're planning for future releases.
+
+HR:
+
+H2:Version 1.1 - Coming Soon
+P:Focus on developer experience and content flexibility.
+
+H3:New Content Types
+UL:
+LI:Headings H2-H6
+LI:Table support with Bootstrap styling
+LI:Code blocks with syntax highlighting
+LI:Blockquote support
+/UL:
+
+H3:Better Error Handling
+UL:
+LI:Clearer error messages
+LI:Config validation
+LI:Better debugging output
+/UL:
+
+H3:More SEO Features
+UL:
+LI:Improved meta tags
+LI:Custom OG tags per post
+LI:Better sitemap generation
+/UL:
+
+HR:
+
+H2:Version 1.2 - In Development
+P:Focus on performance, flexibility, and user experience.
+
+H3:Image Optimization
+UL:
+LI:Automatic image resizing
+LI:Lazy loading improvements
+LI:WebP format support
+/UL:
+
+H3:Syntax Highlighting
+UL:
+LI:Support for popular languages
+LI:Dark and light themes
+LI:Copy-to-clipboard
+/UL:
+
+H3:Themes Support
+UL:
+LI:Multiple built-in themes
+LI:Theme switching via config
+LI:Custom theme creation
+/UL:
+
+HR:
+
+H2:Version 2.0 - Future Vision
+P:Long-term vision for BAX.
+
+H3:Plugin System
+UL:
+LI:Extend BAX with plugins
+LI:Community plugin repository
+LI:Build hooks and events
+/UL:
+
+H3:Multiple Language Support
+UL:
+LI:Multiple languages in content
+LI:Language switcher
+LI:i18n ready
+/UL:
+
+H3:Content Search
+UL:
+LI:Client-side search
+LI:Search results page
+LI:Search filters
+/UL:
+
+HR:
+
+H2:Community Contributions
+P:We welcome contributions!
+
+H3:How to Contribute
+OL:
+LI:Fork the repository
+LI:Create a feature branch
+LI:Submit a pull request
+/OL:
+
+H3:Get Involved
+P:Join our community:
+UL:
+LI:GitHub: https://github.com/mesinkasir/bax
+LI:Report issues: https://github.com/mesinkasir/bax/issues
+/UL:
+
+HR:
+
+H2:Support the Project
+P:If you love BAX, consider supporting us:
+UL:
+LI:<a class="btn btn-primary" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN">PayPal</a>
+LI:<a href="https://creativitaz.gumroad.com/coffee" class="btn btn-warning">Buy Me a Coffee</a>
+LI:<a href="https://github.com/sponsors/mesinkasir" class="btn btn-dark">GitHub Sponsors</a>
+/UL:
+
+BLOCKQUOTE:"The future of static sites is simple, fast, and accessible to everyone. BAX is leading the way."
+
+TAGS:bax roadmap features future development

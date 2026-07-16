@@ -1,0 +1,75 @@
+TITLE:About BAX - Simple and SEO-Friendly Static Site Generator
+DESC:Learn about BAX, a lightweight and SEO-friendly static site generator built with Batch and Bash.
+IMG:https://placehold.co/1200x400/0f172a/ffffff?text=About+BAX
+
+H1:About BAX
+
+H2:<a href="/pages/about.html">What is BAX?</a>
+P:BAX is a modern, lightweight, and SEO-friendly static site generator built with pure Batch (Windows) and Bash (Linux/Mac) scripts. No dependencies, no npm, no Python - just pure shell scripts that generate static HTML pages from simple .zet files.
+
+H2:Why BAX?
+P:BAX was created to make static site generation simple and accessible for everyone. You don't need to learn complex frameworks, install massive dependencies, or configure complicated build tools.
+
+H3:Key Principles
+UL:
+LI:Simplicity - Just write content in .zet format and build
+LI:Performance - Builds your entire site in milliseconds
+LI:Portability - Runs on Windows, Linux, and macOS
+LI:<a href="/pages/about.html"SEO - Built-in optimization with meta tags, Open Graph, and sitemaps</a>
+LI:Zero Dependencies - Uses only built-in shell commands
+/UL:
+
+H2:Inspiration
+P:BAX is inspired by the simplicity of <a href="https://11ty.dev" target="_blank">Eleventy 11ty</a> and Jekyll, but built for people who want even simpler tools. It's perfect for personal blogs, documentation sites, portfolio websites, and small business landing pages.
+
+H2:Who is BAX For?
+UL:
+LI:Developers who want a simple static site generator
+LI:Bloggers who want SEO-friendly content
+LI:Non-developers who want an easy way to build websites
+LI:Anyone who wants to understand how static sites work
+/UL:
+
+H2:Features
+UL:
+LI:Zero dependencies
+LI:Cross-platform (Windows, Linux, macOS)
+LI:<a href="/pages/about.html"SEO optimized (meta tags, Open Graph, Twitter Cards)</a>
+LI:Simple .zet format
+LI:Tag support with auto-generated tag pages
+LI:Pagination for blog posts
+LI:Customizable design with CSS
+LI:Sitemap and robots.txt generation
+LI:Markdown-like content creation
+LI:<a href="https://getbootstrap.com" target="_blank">Bootstrap</a> for responsive design
+/UL:
+
+H2:Get Started Today
+P:Clone the repository and start building your static site in minutes!
+
+CODE:git clone https://github.com/mesinkasir/bax.git
+CODE:cd bax
+CODE:bax.bat  # Windows
+CODE:./bax.sh # Linux/Mac
+
+HR:
+
+H2:Support
+P:Support us Buy Me a Coffee
+UL:
+LI:<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN">Via Paypall</a>
+LI:<a href="https://creativitaz.gumroad.com/coffee">Via Gumroad</a>
+LI:<a href="https://github.com/sponsors/mesinkasir">Via Github</a>
+/UL:
+
+HR:
+
+H2:Version
+P:BAX v1.0
+
+HR:
+
+H2:License
+P:BAX is open-source under the MIT License.
+
+TAGS:about bax ssg static-site

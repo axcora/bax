@@ -1,0 +1,93 @@
+TITLE:Getting Started with BAX - Quick Start Guide
+DATE:13 July 2026
+IMG:https://placehold.co/800x400/0f172a/ffffff?text=Quick+Start
+DESC:Learn how to build your first static site with BAX in just 5 minutes.
+TAGS:bax tutorial quick-start guide
+
+H2:Step 1 - Install BAX
+P:Clone the repository from GitHub:
+
+CODE:git clone https://github.com/mesinkasir/bax.git
+CODE:cd bax
+
+P:That's it! No other dependencies needed. BAX uses only your system's built-in shell.
+
+H2:Step 2 - Configure Your Site
+P:Edit config.zet with your site information:
+
+CODE:SITE_TITLE:My Awesome Site
+CODE:SITE_URL:https://myawesome.site
+CODE:SITE_DESCRIPTION:My awesome static site
+CODE:SITE_IMAGE:https://myawesome.site/og-image.jpg
+CODE:SITE_FAVICON:/favicon.ico
+CODE:POSTS_PER_PAGE:6
+
+P:You can also customize the navigation menu:
+
+CODE:NAV:
+CODE:  - text: Home
+CODE:    url: /
+CODE:  - text: About
+CODE:    url: /about
+CODE:  - text: Contact
+CODE:    url: /contact
+
+H2:Step 3 - Create Content
+P:Create .zet files in the data folder. Each file becomes a blog post.
+
+CODE:TITLE:My First Post
+CODE:DATE:15 July 2026
+CODE:IMG:https://example.com/image.jpg
+CODE:DESC:This is my first post
+CODE:TAGS:technology programming
+CODE:
+CODE:H2:Welcome!
+CODE:P:Welcome to my first blog post!
+
+P:For static pages, create .zet files in the pages folder:
+
+CODE:TITLE:About Me
+CODE:H1:About Me
+CODE:P:This is my about page.
+
+H2:Step 4 - Build Your Site
+P:Run the build command for your operating system:
+
+H3:Windows
+CODE:bax.bat
+
+H3:Linux / macOS
+CODE:chmod +x bax.sh
+CODE:./bax.sh
+
+P:The build process takes milliseconds and generates all HTML files in the public folder.
+
+H2:Step 5 - Deploy
+P:Upload the public folder to your hosting provider.
+
+H3:GitHub Pages
+CODE:mv .github/workflows/deploy.yml.example .github/workflows/deploy.yml
+CODE:git add .
+CODE:git commit -m "Deploy BAX site"
+CODE:git push origin main
+
+H3:Netlify
+UL:
+LI:Build command: ./bax.sh
+LI:Publish directory: public/
+/UL:
+
+H3:Vercel
+UL:
+LI:Build command: ./bax.sh
+LI:Output directory: public/
+/UL:
+
+H2:Your Site is Live!
+P:Congratulations! Your BAX static site is now live on the web.
+
+BLOCKQUOTE:"BAX makes static site generation simple, fast, and accessible for everyone."
+
+P:Need help? Check the documentation or open an issue on GitHub.
+
+TAGS:bax tutorial quick-start beginner guide
