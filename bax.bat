@@ -724,10 +724,66 @@ goto :eof
     echo ^</html^>
 ) > "public\tags\%~1.html"
 goto :eof
+
 :: ============================================================
-:: GENERATE SITEMAP & ROBOTS.TXT
+:: GENERATE SITEMAP & ROBOTS.TXT (FIXED DATE - FINAL)
 :: ============================================================
 :GenerateSEO
+
+:: Get date components
+for /f "tokens=1-3 delims=/- " %%a in ('echo %date%') do (
+    set "dd=%%a"
+    set "mm=%%b"
+    set "yyyy=%%c"
+)
+
+:: Convert month name to number (JANUARY=01, FEBRUARY=02, etc)
+set "mm=!mm:January=01!"
+set "mm=!mm:February=02!"
+set "mm=!mm:March=03!"
+set "mm=!mm:April=04!"
+set "mm=!mm:May=05!"
+set "mm=!mm:June=06!"
+set "mm=!mm:July=07!"
+set "mm=!mm:August=08!"
+set "mm=!mm:September=09!"
+set "mm=!mm:October=10!"
+set "mm=!mm:November=11!"
+set "mm=!mm:December=12!"
+
+:: Convert short month names
+set "mm=!mm:Jan=01!"
+set "mm=!mm:Feb=02!"
+set "mm=!mm:Mar=03!"
+set "mm=!mm:Apr=04!"
+set "mm=!mm:May=05!"
+set "mm=!mm:Jun=06!"
+set "mm=!mm:Jul=07!"
+set "mm=!mm:Aug=08!"
+set "mm=!mm:Sep=09!"
+set "mm=!mm:Oct=10!"
+set "mm=!mm:Nov=11!"
+set "mm=!mm:Dec=12!"
+
+:: Pad with leading zeros
+if "!mm:~0,1!"==" " set "mm=0!mm:~1!"
+if "!dd:~0,1!"==" " set "dd=0!dd:~1!"
+
+:: Get time
+for /f "tokens=1-3 delims=:. " %%a in ('echo %time%') do (
+    set "hh=%%a"
+    set "min=%%b"
+    set "sec=%%c"
+)
+
+if "!hh:~0,1!"==" " set "hh=0!hh:~1!"
+if "!hh:~0,1!"=="" set "hh=00"
+if "!min!"=="" set "min=00"
+if "!sec!"=="" set "sec=00"
+
+:: Build ISO date
+set "ISO_DATE=!yyyy!-!mm!-!dd!T!hh!:!min!:!sec!"
+
 set "sitemap=public\sitemap.xml"
 
 (
@@ -737,7 +793,7 @@ set "sitemap=public\sitemap.xml"
     :: Homepage
     echo ^<url^>
     echo ^<loc^>!SITE_URL!^</loc^>
-    echo ^<lastmod^>%date%-%time%^</lastmod^>
+    echo ^<lastmod^>!ISO_DATE!^</lastmod^>
     echo ^<changefreq^>daily^</changefreq^>
     echo ^<priority^>1.0^</priority^>
     echo ^</url^>
@@ -750,7 +806,7 @@ set "sitemap=public\sitemap.xml"
         ) else (
             echo ^<loc^>!SITE_URL!page-%%p.html^</loc^>
         )
-        echo ^<lastmod^>%date%-%time%^</lastmod^>
+        echo ^<lastmod^>!ISO_DATE!^</lastmod^>
         echo ^<changefreq^>weekly^</changefreq^>
         echo ^<priority^>0.9^</priority^>
         echo ^</url^>
@@ -761,7 +817,7 @@ set "sitemap=public\sitemap.xml"
         set "fname=%%~nf"
         echo ^<url^>
         echo ^<loc^>!SITE_URL!!fname!.html^</loc^>
-        echo ^<lastmod^>%date%-%time%^</lastmod^>
+        echo ^<lastmod^>!ISO_DATE!^</lastmod^>
         echo ^<changefreq^>monthly^</changefreq^>
         echo ^<priority^>0.8^</priority^>
         echo ^</url^>
@@ -772,7 +828,7 @@ set "sitemap=public\sitemap.xml"
         set "fname=%%~nf"
         echo ^<url^>
         echo ^<loc^>!SITE_URL!pages/%%~nf.html^</loc^>
-        echo ^<lastmod^>%date%-%time%^</lastmod^>
+        echo ^<lastmod^>!ISO_DATE!^</lastmod^>
         echo ^<changefreq^>monthly^</changefreq^>
         echo ^<priority^>0.7^</priority^>
         echo ^</url^>
@@ -783,7 +839,7 @@ set "sitemap=public\sitemap.xml"
         set "fname=%%~nf"
         echo ^<url^>
         echo ^<loc^>!SITE_URL!tags/%%~nxf^</loc^>
-        echo ^<lastmod^>%date%-%time%^</lastmod^>
+        echo ^<lastmod^>!ISO_DATE!^</lastmod^>
         echo ^<changefreq^>monthly^</changefreq^>
         echo ^<priority^>0.6^</priority^>
         echo ^</url^>
@@ -807,6 +863,7 @@ echo  SEO FILES GENERATED!
 echo ==========================================
 echo  public/sitemap.xml
 echo  public/robots.txt
+echo  Lastmod: !ISO_DATE!
 echo ==========================================
 
 goto :eof
