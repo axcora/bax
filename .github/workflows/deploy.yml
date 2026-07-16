@@ -15,25 +15,52 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Setup Git Bash (for Windows batch compatibility)
         run: |
           sudo apt-get update
           sudo apt-get install -y dos2unix
-      
+
       - name: Make bax.sh executable
         run: |
           chmod +x bax.sh
           dos2unix bax.sh
-      
+
       - name: Build static site
         run: |
           ./bax.sh
-      
+
+      - name: Debug - List public folder
+        run: |
+          echo "=========================================="
+          echo "  PUBLIC FOLDER CONTENT"
+          echo "=========================================="
+          ls -la public/
+          echo ""
+          echo "=========================================="
+          echo "  PAGES"
+          echo "=========================================="
+          ls -la public/pages/ || echo "  (empty or not exists)"
+          echo ""
+          echo "=========================================="
+          echo "  TAGS"
+          echo "=========================================="
+          ls -la public/tags/ || echo "  (empty or not exists)"
+          echo ""
+          echo "=========================================="
+          echo "  CHECK CNAME"
+          echo "=========================================="
+          cat public/CNAME 2>/dev/null || echo "  (CNAME not found)"
+          echo ""
+          echo "=========================================="
+          echo "  CHECK index.html"
+          echo "=========================================="
+          head -n 5 public/index.html 2>/dev/null || echo "  (index.html not found!)"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -43,10 +70,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     runs-on: ubuntu-latest
     needs: build
-    
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
