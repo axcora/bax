@@ -28,7 +28,7 @@ set "POSTS_PER_PAGE=6"
 set "NAV_ITEMS="
 set "nav_text="
 set "nav_url="
-
+set "SITE_FAVICON=https://bax.axcora.com/images/axcoranewlogored.webp"
 set "SITE_KEYWORDS=static site generator, ssg, batch, bash, jamstack, seo friendly"
 set "SITE_AUTHOR=Axcora Tech"
 set "SITE_TWITTER_HANDLE=https://bax.axcora.com"
